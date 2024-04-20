@@ -19,6 +19,11 @@ class Student:
         self.progress -= 0.1
         self.gladness -= 5
 
+    def to_eat(self):
+        print("Time to eat")
+        self.progress += 0.3
+        self.gladness += 5
+
     def to_sleep(self):
         print("Time to sleep")
         self.gladness += 3
