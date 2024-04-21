@@ -1,0 +1,23 @@
+class Human:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self, message):
+        print(f"{self.name} говорить: {message}")
+
+
+class Robot:
+    def __init__(self, name):
+        self.name = name
+
+    def operate(self):
+        print(f"{self.name} виконує операцію")
+
+
+# Створення екземплярів обох класів
+person = Human("Микола Володимирович")
+robot = Robot("Робокоп")
+
+# Взаємодія між людиною та роботом
+person.speak("Привіт, зроби каву!")
+robot.operate()
