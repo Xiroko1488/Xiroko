@@ -1,6 +1,6 @@
 class Number(Exception):
     def __str__(self):
-        return f"you didn`t entered 5 nubers"
+        return f"you didn`t entered 5 nuber"
 
 
 def check_num(num):
