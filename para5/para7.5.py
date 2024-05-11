@@ -1,11 +1,11 @@
 def raise_to_the_deg(numder, max_degree):
     i = 0
-    for _ in range(max_degree):
+    while True:
         yield numder**i
         i += 1
 
 
-res = raise_to_the_deg(122345, 50)
+res = raise_to_the_deg(12)
 print(res)
 for _ in res:
     print(_)
