@@ -1,0 +1,25 @@
+import requests
+import sqlite3
+from datetime import datetime
+
+def get_temperature():
+    # URL сайта с погодой
+    url = 'https://www.meteo.gov.ua
+    response = requests.get(url)
+    data = response.json()
+    # Извлекаем температуру из данных
+    temperature = data['temperature']
+    return temperature
+
+def save_to_database(date_time, temperature):
+    conn = sqlite3.connect('weather.db')
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO weather (date_time, temperature) VALUES (?, ?)", (date_time, temperature))
+    conn.commit()
+    conn.close()
+
+date_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+temperature = get_temperature()
+
+save_to_database(date_time, temperature)
